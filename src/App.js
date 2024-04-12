@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import * as React from 'react';
+import ProductHero from './modules/views/ProductHero';
+import ProductValues from './modules/views/ProductValues';
+import ProductHowItWorks from './modules/views/ProductHowItWorks';
+import AppAppBar from './modules/views/AppAppBar';
+import withRoot from './modules/withRoot';
+import TeamSection from './modules/views/TeamSection';
 import './App.css';
+import QuotesCarousel from './modules/views/QuotesCarousel';
 
-function App() {
+function Index() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <AppAppBar />
+      <ProductHero />
+      <ProductValues />
+      <ProductHowItWorks />
+      <TeamSection />
+      <QuotesCarousel />
+    </React.Fragment>
   );
 }
 
-export default App;
+export default withRoot(Index);
